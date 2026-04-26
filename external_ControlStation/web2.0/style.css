@@ -1,0 +1,41 @@
+body { background: #0b0b14; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; }
+.header-main { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: #1a1a2e; border-bottom: 2px solid #00d4ff; }
+.input-group { display: flex; background: #222; border-radius: 6px; overflow: hidden; border: 1px solid #444; }
+#farola-id { background: transparent; border: none; color: white; padding: 10px; width: 80px; text-align: center; outline: none; }
+#btn-cargar { background: #00d4ff; border: none; padding: 0 20px; font-weight: bold; cursor: pointer; }
+
+.container { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+
+/* Visualización Farola y Efecto Agua */
+.visual-section { position: relative; background: #161625; padding: 40px; border-radius: 20px; width: 100%; max-width: 400px; text-align: center; }
+.lamp-world { position: relative; height: 180px; display: flex; flex-direction: column; align-items: center; }
+.lamp-head { width: 80px; height: 25px; background: #333; border-radius: 15px 15px 0 0; z-index: 2; }
+.foco { width: 50px; height: 15px; background: #111; margin: 5px auto; border-radius: 50%; transition: 1s; }
+.foco.on { background: #fff176; box-shadow: 0 10px 50px #fff176; }
+.lamp-post { width: 12px; height: 100px; background: #333; position: relative; }
+.alerta { width: 16px; height: 16px; position: absolute; left: -2px; top: 20px; border-radius: 50%; }
+.alerta.danger { background: #ff1744; box-shadow: 0 0 20px #ff1744; animation: blink 0.6s infinite; }
+
+/* EFECTO AGUA HACIA ABAJO */
+.vapor-box { 
+    position: absolute; top: 25px; width: 70px; height: 120px; 
+    overflow: hidden; display: none; pointer-events: none; z-index: 1;
+}
+.vapor-box.active { display: block; }
+.drop { 
+    position: absolute; top: -10px; width: 2px; height: 15px; 
+    background: rgba(0, 212, 255, 0.6); animation: rain 0.8s linear infinite; 
+}
+
+@keyframes rain {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(120px); opacity: 0; }
+}
+
+/* Grid de Sensores */
+.sensor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; }
+.card { background: #1a1a2e; padding: 20px; border-radius: 15px; border: 1px solid #333; }
+.chart-container { height: 160px; margin-top: 15px; }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }

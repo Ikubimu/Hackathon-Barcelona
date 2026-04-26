@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart City IoT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header-main">
+        <div class="logo">📊 <span>Smart City</span></div>
+        <div class="search-box">
+            <div class="input-group">
+                <input list="farolas" id="farola-id" value="1001" autocomplete="off">
+                <datalist id="farolas">
+                    <option value="1001"><option value="2000"><option value="3000">
+                </datalist>
+                <button id="btn-cargar">ENTER</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="visual-section">
+            <div class="lamp-world">
+                <div id="vapor" class="vapor-box">
+                    <div class="drop" style="left:10%; animation-delay:0s"></div>
+                    <div class="drop" style="left:30%; animation-delay:0.4s"></div>
+                    <div class="drop" style="left:50%; animation-delay:0.2s"></div>
+                    <div class="drop" style="left:70%; animation-delay:0.6s"></div>
+                    <div class="drop" style="left:90%; animation-delay:0.1s"></div>
+                </div>
+                <div class="lamp-head"><div id="foco" class="foco"></div></div>
+                <div class="lamp-post"><div id="alerta" class="alerta"></div></div>
+            </div>
+            <p id="status-text">Iniciando...</p>
+        </section>
+
+        <section class="sensor-grid">
+            <div class="card">
+                <h3>🌡️ Temperatura: <span id="val-temp">--</span>°C</h3>
+                <div class="chart-container"><canvas id="tempChart"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>💧 Humedad: <span id="val-hum">--</span>%</h3>
+                <div class="chart-container"><canvas id="humChart"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>🔊 Ruido: <span id="val-sonido">--</span> dB</h3>
+                <div class="chart-container"><canvas id="soundChart"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>💡 Iluminación: <span id="val-luz">--</span> lx</h3>
+                <div class="chart-container"><canvas id="lightChart"></canvas></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/eel.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
