@@ -1,0 +1,8 @@
+name: SmartLight
+description: ""
+ports: []
+bricks:
+- arduino:audio_classification:
+    model: ei-model-974706-1
+- arduino:web_ui: {}
+icon: 😀
